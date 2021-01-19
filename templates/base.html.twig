@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}
+            <style>
+                body{
+                    background-color: #F8F9F9;
+
+                }
+                li{
+                    display: flex;
+                }
+            </style>
+        {% endblock %}
+
+
+        {% block javascripts %}{% endblock %}
+    </head>
+    <body>
+    <li>
+        <ul><a href="/">accueil</a></ul>
+        <ul><a href="propos">a propos</a></ul>
+        <ul>contact</ul>
+        <ul>aide</ul>
+    </li>
+        {% block body %}{% endblock %}
+    </body>
+</html>

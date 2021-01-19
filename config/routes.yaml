@@ -1,0 +1,7 @@
+index:
+    path: /
+    controller: App\Controller\indexController::index
+
+propos:
+    path: /propos
+    controller: App\Controller\indexController::propos
