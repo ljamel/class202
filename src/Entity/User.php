@@ -3,11 +3,13 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
 * @ORM\Table(name="app_users")
 * @ORM\Entity(repositoryClass="AppBundle\Repository\UserRepository")
+ * @UniqueEntity(fields={"username"}, message="There is already an account with this username")
 */
 class User implements UserInterface, \Serializable
 {
@@ -47,6 +49,11 @@ private $nom;
  * @ORM\Column(type="string", length=255)
  */
 private $prenom;
+
+/**
+ * @ORM\Column(type="boolean")
+ */
+private $isVerified = false;
 
 public function __construct()
 {
@@ -125,6 +132,18 @@ public function getPrenom(): ?string
 public function setPrenom(string $prenom): self
 {
     $this->prenom = $prenom;
+
+    return $this;
+}
+
+public function isVerified(): bool
+{
+    return $this->isVerified;
+}
+
+public function setIsVerified(bool $isVerified): self
+{
+    $this->isVerified = $isVerified;
 
     return $this;
 }
