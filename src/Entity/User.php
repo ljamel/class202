@@ -79,6 +79,11 @@ public function getPassword()
 return $this->password;
 }
 
+public function setPassword()
+{
+return $this->password;
+}
+
 public function getRoles()
 {
 return array('ROLE_USER');
@@ -132,6 +137,15 @@ public function getPrenom(): ?string
 public function setPrenom(string $prenom): self
 {
     $this->prenom = $prenom;
+
+    return $this;
+}
+
+
+
+public function setUsername(string $username)
+{
+    $this->prenom = $username;
 
     return $this;
 }

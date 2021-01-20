@@ -5,7 +5,15 @@
 
 {% block body %}
 
+
     <h1>hello word</h1>
+
+
+
+    {% for table in tables %}
+        {{ table }}
+    {% endfor %}
+
     <p id="para">Some text here</p>
     <button onclick="changeColor('blue');">blue</button>
     <button onclick="changeColor('red');">red</button>

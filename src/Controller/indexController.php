@@ -11,9 +11,16 @@ class indexController extends AbstractController
 
     public function index()
     {
+
+        $tables = array('value1', 'value2', 'autre');
+
+        foreach($tables as $table){
+            echo $table;
+        }
+
         // ici mon code php
         return $this->render('index.html.twig', [
-            'controller_name' => 'MemberController',
+            'tables' => $tables
         ]);
     }
 
