@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\User;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 
@@ -17,6 +18,11 @@ class indexController extends AbstractController
         foreach($tables as $table){
             echo $table;
         }
+
+        $entityManager = $this->getDoctrine()->getManager();
+        $users = $entityManager->getRepository(User::class)->findAll();
+
+        dd($users);
 
         // ici mon code php
         return $this->render('index.html.twig', [

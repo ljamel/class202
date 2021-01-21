@@ -65,6 +65,8 @@ $this->isActive = true;
 public function getUsername()
 {
 return $this->username;
+
+    return $this;
 }
 
 public function getSalt()
@@ -79,7 +81,7 @@ public function getPassword()
 return $this->password;
 }
 
-public function setPassword()
+public function setPassword($password)
 {
 return $this->password;
 }
